@@ -37,7 +37,9 @@ function draw() {
   lattice.show();
 
   if (lattice.percolates()) {
-    console.log(lattice.getOpenedSites() / (L * L));
+    let p_c = nf(lattice.getOpenedSites() / (L * L), 1, 4);
+    console.log(p_c);
+    save("final_lattice.png");
     noLoop();
   }
 }
